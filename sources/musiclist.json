@@ -1,0 +1,111 @@
+[
+{
+    "name":"招财进宝",
+    "singer":"火箭少女101杨超越",
+    "album":"招财进宝",
+    "time":"03:15",
+    "link_url":"./sources/招财进宝.mp3",
+    "cover":"./sources/招财进宝.jpg",
+    "link_lrc":"./sources/招财进宝.txt"
+},
+{
+    "name":"如风",
+    "singer":"龙梅子",
+    "album":"如风",
+    "time":"04:05",
+    "link_url":"./sources/夜将至.mp3",
+    "cover":"./sources/如风.jpg",
+    "link_lrc":"./sources/如风.txt"
+},
+{
+    "name":"盗将行",
+    "singer":"汐月",
+    "album":"盗将行",
+    "time":"03:17",
+    "link_url":"./sources/盗将行.mp3",
+    "cover":"./sources/盗将行.jpg",
+    "link_lrc":"./sources/盗将行.txt"
+},
+
+{
+    "name":"木兰",
+    "singer":"李宇春",
+    "album":"木兰",
+    "time":"03:21",
+    "link_url":"./sources/木兰.mp3",
+    "cover":"./sources/木兰.jpg",
+    "link_lrc":"./sources/木兰.txt"
+},
+{
+    "name":"炸弹诗",
+    "singer":"李宇春",
+    "album":"炸弹诗",
+    "time":"04:13",
+    "link_url":"./sources/炸弹诗.mp3",
+    "cover":"./sources/炸弹诗.jpg",
+    "link_lrc":"./sources/炸弹诗.txt"
+},
+{
+    "name":"一百年很长吗",
+    "singer":"黄渤",
+    "album":"一百年很长吗",
+    "time":"04:28",
+    "link_url":"./sources/一百年很长吗.mp3",
+    "cover":"./sources/一百年很长吗.jpg",
+    "link_lrc":"./sources/一百年很长吗.txt"
+},
+{
+    "name":"清明上河笑",
+    "singer":"墨明棋妙",
+    "album":"千山梦",
+    "time":"03:20",
+    "link_url":"./sources/清明上河笑.mp3",
+    "cover":"./sources/清明上河笑.jpg",
+    "link_lrc":""
+},
+{
+    "name":"纳兰思",
+    "singer":"墨明棋妙",
+    "album":"纳兰思",
+    "time":"03:20",
+    "link_url":"./sources/纳兰思.mp3",
+    "cover":"./sources/纳兰思.jpg",
+    "link_lrc":""
+},
+{
+    "name":"The Heart Of The Mountain",
+    "singer":"Release The Long Ships",
+    "album":"Wilderness",
+    "time":"05:52",
+    "link_url":"./sources/纳兰思.mp3",
+    "cover":"./sources/纳兰思.jpg",
+    "link_lrc":""
+},
+{
+    "name":"老街",
+    "singer":"李荣浩",
+    "album":"小黄",
+    "time":"05:18",
+    "link_url":"./sources/老街.mp3",
+    "cover":"./sources/老街.jpg",
+    "link_lrc":""
+},
+{
+    "name":"你还要我怎样",
+    "singer":"薛之谦",
+    "album":"意外",
+    "time":"05:11",
+    "link_url":"./sources/你还要我怎样.mp3",
+    "cover":"./sources/你还要我怎样.jpg",
+    "link_lrc":""
+},
+{
+    "name":"你的样子",
+    "singer":"林志炫",
+    "album":"一个人的样子",
+    "time":"04:35",
+    "link_url":"./sources/你的样子.mp3",
+    "cover":"./sources/你的样子.jpg",
+    "link_lrc":""
+}
+]
