@@ -455,7 +455,7 @@ html,body{
     height: 100%;
     background: url(../images/T002R300x300M000002zqVhj4OuAR2.jpg) no-repeat 0 0;
     background-size: cover;
-    filter: blur(100px);
+    filter: blur(100px); 
 }
 .mask{
     position: absolute;

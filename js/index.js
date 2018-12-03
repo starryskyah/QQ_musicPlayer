@@ -52,6 +52,9 @@ $(function(){
         }
     });
 
+    //4\ 监听底部操作按钮
+
+
     //3 获取歌曲列表
     getPlayerList();
     function getPlayerList(){
