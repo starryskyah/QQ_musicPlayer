@@ -75,7 +75,7 @@ html,body{
     line-height: 40px;
     text-align: center;
     border:1px solid #fff;
-    box-sizing:border-box;/**/
+    box-sizing:border-box;/*指定盒子模型种类，content-box指定盒子模型为W3C，border-box为IE盒子模型*/
     border-radius: 5px;
     color:#fff;
     opacity: 0.5;
