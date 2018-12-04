@@ -342,7 +342,7 @@ html,body{
     margin-top:5px;
 }
 .music_progress_bar .music_progress_line{
-    width:100px;
+    width:0px;
     height:100%;
     background: #fff;
 }
@@ -353,7 +353,7 @@ html,body{
     background: #fff;
     position: relative;
     top:-5px;
-    left:100px;
+    left:0px;
 }
 
 .footer_in .music_mode{
@@ -453,9 +453,11 @@ html,body{
     z-index: -2;
     width: 100%;
     height: 100%;
-    background: url(../images/T002R300x300M000002zqVhj4OuAR2.jpg) no-repeat 0 0;
+    background-image: url(../images/T002R300x300M000002zqVhj4OuAR2.jpg);
+    background-repeat: no-repeat;
+    background-position:50%;
     background-size: cover;
-    filter: blur(100px); 
+    filter:blur(65px);
 }
 .mask{
     position: absolute;

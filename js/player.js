@@ -45,6 +45,14 @@
                 index=this.currentIndex+1;
             }
             return index;
+        },
+        delMusic:function(index){
+            //删除对应索引的音乐
+            this.musicList.splice(index,1);
+            //判断当前删除的是不是当前播放的前面索引
+            if(index<this.currentIndex){
+                this.currentIndex=this.currentIndex-1;
+            }
         }
     }
 

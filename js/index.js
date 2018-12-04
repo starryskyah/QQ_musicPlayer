@@ -2,8 +2,21 @@ $(function(){
     //0 自定义滚动条
     $(".content_list").mCustomScrollbar();
 
+    //播放器
     var $audio=$("audio");
     var player=new Player($audio);
+
+    //进度条
+    var $progressBar=$(".music_progress_bar");
+    var $progressLine=$(".music_progress_line");
+    var $progressDot=$(".music_progress_dot");
+    var progress=new Progress($progressBar,$progressLine,$progressDot);
+
+    //声音进度条
+    var $voiceBar=$(".music_voice_bar");
+    var $voiceLine=$(".music_voice_line");
+    var $voiceDot=$(".music_voice_dot");
+    var voiceProgress=new Progress($voiceBar,$voiceLine,$voiceDot);
 
     //1 获取歌曲列表
     getPlayerList();
@@ -19,7 +32,9 @@ $(function(){
                 $.each(data,function(index,ele){
                     var $item=createMusicItem(index,ele);
                     $musicList.append($item);
-                })
+                });
+                //初始化界面其他部分的歌曲信息
+                initMusicInfo(data[0]);
             },
             error:function(error){
 
@@ -82,13 +97,31 @@ $(function(){
 
             //3.4 播放音乐
             player.playMusic($listMusic.get(0).index,$listMusic.get(0).music);
+            //切换歌曲信息
+            initMusicInfo($listMusic.get(0).music);
         });
 
-        // 监听子菜单中删除按钮
-        
+        // 4监听子菜单中删除按钮
+        $(".content_list").delegate(".list_menu_del","click",function(){
+            //删除界面点击的那行数据
+            var $item=$(this).parents(".list_music");     
+            //判断删除的是不是当前正在播放的
+            if($item.get(0).index==player.currentIndex){
+                $(".music_next").trigger("click");
+            }      
+            player.delMusic($item.get(0).index);
+            $item.remove();
 
-        //4\ 监听底部操作按钮
-          //4.1监听底部播放按钮
+            //重新排序
+            $(".list_music").each(function(index,ele){
+                ele.index=index;
+                console.log($(this),$(ele));
+                $(this).find(".list_number").text(index+1);
+            })
+        });
+
+        //5\ 监听底部操作按钮
+          //5.1监听底部播放按钮
           $(".music_play").click(function(){
                 //判断当前有没有播放音乐
                 if(player.currentIndex==-1){
@@ -100,14 +133,22 @@ $(function(){
                     $(".list_music").eq(player.currentIndex).find(".list_menu_play").trigger("click");
                 }
           });
-          //4.2监听底部上一首按钮
+          //5.2监听底部上一首按钮
           $(".music_pre").click(function(){
               $(".list_music").eq(player.preIndex()).find(".list_menu_play").trigger("click"); 
           });
-          //4.3监听底部下一首按钮
+          //5.3监听底部下一首按钮
           $(".music_next").click(function(){
               $(".list_music").eq(player.nextIndex()).find(".list_menu_play").trigger("click");
           });
+
+
+          //6 监听进度条事件
+           //6.1 点击
+           $(".music_progress_bar").click(function(){
+                
+           });
+           //6.2 移动
 
     }
 
@@ -137,5 +178,27 @@ $(function(){
         $item.get(0).index=index;
         $item.get(0).music=music;
         return $item;
+    }
+
+
+    //初始化歌曲信息
+    function initMusicInfo(music){
+        var $musicImage=$(".song_info_pic img");
+        var $musicName=$(".song_info_name a");
+        var $musicSigner=$(".song_info_signer a");
+        var $musicAblum=$(".song_info_ablum a");
+        $musicImage.attr("src",music.cover);
+        $musicName.text(music.name);
+        $musicSigner.text(music.singer);
+        $musicAblum.text(music.album);
+
+        var $musicProgressInfo=$(".music_progress_top .music_progress_name");
+        var $musicProgressTime=$(".music_progress_top .music_progress_time");
+        $musicProgressInfo.text(music.name+" / "+music.singer);
+        $musicProgressTime.text("00:00 / "+music.time);
+
+        //设置整体背景色
+        $(".maskbg").css("background-image","url("+music.cover+")");
+        
     }
 })
