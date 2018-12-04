@@ -45,7 +45,11 @@
                 index=this.currentIndex+1;
             }
             return index;
+        },
+        delMusic:function(index){
+            this.musicList.splice(index,1);
         }
+
     }
 
     Player.prototype.init.prototype=Player.prototype;
