@@ -152,29 +152,25 @@ $(function(){
 
     }
 
-    
-
-
-    
     // 定义创建音乐条目的方法
     function createMusicItem(index,music){
         var $item=$("<li class=\"list_music\">"
-    +                  "<div class=\"list_check\"><i></i></div>"
-    +                  "<div class=\"list_number\">"+(index+1)+"</div>"
-    +                  "<div class=\"list_name\">"+music.name
-    +                     "<div class=\"list_menu\">"
-    +                        "<a href=\"javascript:;\" title=\"播放\" class=\"list_menu_play\"></a>"
-    +                        "<a href=\"javascript:;\" title=\"添加到歌单\"></a>"
-    +                        "<a href=\"javascript:;\" title=\"下载\"></a>"
-    +                        "<a href=\"javascript:;\" title=\"分享\"></a>"
-    +                      "</div>"
-    +                  "</div>"
-    +                  "<div class=\"list_singer\">"+music.singer+"</div>"
-    +                  "<div class=\"list_time\">"
-    +                     "<span>"+music.time+"</span>"
-    +                     "<a href=\"javascript:;\" title=\"删除\" class=\"list_menu_del\"></a>"
-    +                  "</div>"
-    +              "</li>");
+                        +"<div class=\"list_check\"><i></i></div>"
+                        +"<div class=\"list_number\">"+(index+1)+"</div>"
+                        +"<div class=\"list_name\">"+music.name
+                            +"<div class=\"list_menu\">"
+                                +"<a href=\"javascript:;\" title=\"播放\" class=\"list_menu_play\"></a>"
+                                +"<a href=\"javascript:;\" title=\"添加到歌单\"></a>"
+                                +"<a href=\"javascript:;\" title=\"下载\"></a>"
+                                +"<a href=\"javascript:;\" title=\"分享\"></a>"
+                            +"</div>"
+                        +"</div>"
+                        +"<div class=\"list_singer\">"+music.singer+"</div>"
+                        +"<div class=\"list_time\">"
+                            +"<span>"+music.time+"</span>"
+                            +"<a href=\"javascript:;\" title=\"删除\" class=\"list_menu_del\"></a>"
+                        +"</div>"
+                    +"</li>");
         $item.get(0).index=index;
         $item.get(0).music=music;
         return $item;

@@ -47,13 +47,18 @@
             return index;
         },
         delMusic:function(index){
+<<<<<<< HEAD
             //删除对应索引的音乐
             this.musicList.splice(index,1);
             //判断当前删除的是不是当前播放的前面索引
             if(index<this.currentIndex){
                 this.currentIndex=this.currentIndex-1;
             }
+=======
+            this.musicList.splice(index,1);
+>>>>>>> 44bdf2d1cc60c1653a96a2540c28c8c3a38bc444
         }
+
     }
 
     Player.prototype.init.prototype=Player.prototype;
