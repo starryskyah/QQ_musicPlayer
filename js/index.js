@@ -11,13 +11,27 @@ $(function(){
     var $progressLine=$(".music_progress_line");
     var $progressDot=$(".music_progress_dot");
     var progress=new Progress($progressBar,$progressLine,$progressDot);
+    //初始化点击事件
+    progress.progressClick(function(value){
+        //player.musicSeekTo(value);
+    });
+    //初始化移动事件
+    progress.progressMove(function(value){
+        player.musicSeekTo(value);
+    });
 
     //声音进度条
     var $voiceBar=$(".music_voice_bar");
     var $voiceLine=$(".music_voice_line");
     var $voiceDot=$(".music_voice_dot");
     var voiceProgress=new Progress($voiceBar,$voiceLine,$voiceDot);
-
+    voiceProgress.progressClick(function(value){
+        //player.musicSeekTo(value);
+        player.voiceSeekTo(value);
+    });
+    voiceProgress.progressMove(function(value){
+        player.voiceSeekTo(value);
+    });
     //1 获取歌曲列表
     getPlayerList();
     function getPlayerList(){
@@ -143,13 +157,31 @@ $(function(){
           });
 
 
-          //6 监听进度条事件
-           //6.1 点击
-           $(".music_progress_bar").click(function(){
-                
-           });
-           //6.2 移动
+          //6 监听播放进度
+          player.musicTimeUpdate(function(currentTime,duration,timeStr){
+              //同步时间
+              $(".music_progress_time").text(timeStr);
+              //同步进度条
+              var value=currentTime/duration*100;
+            //   $(".music_progress_line").css("width",value+"%");
+            //   $(".music_progress_dot").css("left",value+"%");
+            progress.setProgress(value);
 
+          });
+
+          //7 监听声音
+          $(".music_voice_icon").click(function(){
+              //图标切换
+              $(this).toggleClass("music_voice_icon2");
+              //声音切换
+              if($(this).attr("class").indexOf("music_voice_icon2")!=-1){
+                  //没有声音
+                  player.voiceSeekTo(0);
+              }else{
+                player.voiceSeekTo(1);
+              }
+          })
+          
     }
 
     // 定义创建音乐条目的方法
@@ -175,8 +207,6 @@ $(function(){
         $item.get(0).music=music;
         return $item;
     }
-
-
     //初始化歌曲信息
     function initMusicInfo(music){
         var $musicImage=$(".song_info_pic img");
@@ -197,4 +227,6 @@ $(function(){
         $(".maskbg").css("background-image","url("+music.cover+")");
         
     }
+
+   
 })

@@ -44,7 +44,7 @@ html,body{
 
 .content{
     width: 100%;
-    height: 460px;   
+    height: 500px;   
 }
 .content .content_in{
     width: 1200px;
@@ -102,7 +102,7 @@ html,body{
 
 .content_left .content_list{
     width: 100%;
-    height:420px;    
+    height:500px;    
     overflow: auto;
 }
 .content_list li{
@@ -259,6 +259,7 @@ html,body{
     width: 1200px;
     height: 100%;   
     margin: 0 auto;
+    user-select: none;
 }
 
 .footer_in a{
@@ -317,6 +318,7 @@ html,body{
     height:4px;
     background: rgba(255,255,255,0.5);
     margin-top:5px;
+    position: relative;
 }
 .music_progress_bar .music_progress_line{
     width:0px;
@@ -328,7 +330,7 @@ html,body{
     height:14px;
     border-radius: 50%;
     background: #fff;
-    position: relative;
+    position: absolute;
     top:-5px;
     left:0px;
 }
@@ -385,6 +387,7 @@ html,body{
     height: 40px;   
     position: relative;
     top:10px;
+    left:50px;
 }
 .music_voice_info .music_voice_icon{
     width: 26px;
@@ -395,6 +398,11 @@ html,body{
     left:0;
     
 }
+.music_voice_info .music_voice_icon2{
+    
+    background-position: 0 -182px;
+
+}
 .music_voice_info .music_voice_bar{
     width: 70px;
     height:4px;
@@ -404,7 +412,7 @@ html,body{
     top:18px;
 }
 .music_voice_bar .music_voice_line{
-    width:50px;
+    width:70px;
     height:100%;
     background: #fff;
 }
@@ -415,7 +423,7 @@ html,body{
     background: #fff;
     position: relative;
     top:-5px;
-    left:50px;
+    left:70px;
 }
 
 .maskbg{
